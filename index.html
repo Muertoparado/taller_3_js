@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Dom</h1>
+    <fieldset>
+        <legend>Ubicacion sede de CAMPUS:</legend>
+        <form id="myFormularioCampus">
+            <input type="text" name="nombreSede" placeholder="Nombre de la sedes">
+            <input type="text" name="direccion" placeholder="Direccion">
+            <input type="text" name="telefono" placeholder="Telefono"><br><br>
+            <input type="submit" value="Guardar">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Temario</legend>
+        <form action="">
+            <input type="text" name="materia1" placeholder="Materia 1">
+            <input type="text" name="materia2" placeholder="Materia 2">
+            <input type="text" name="materia3" placeholder="Materia 3">
+            <input type="text" name="materia4" placeholder="Materia 4">
+            <input type="text" name="materia5" placeholder="Materia 5">
+            <br><br>
+            <input type="submit" value="Guardar">
+
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos usuarios CAMPUS:</legend>
+        <form id="team">
+            <h2>Team</h2>
+            <input type="text" name="teamg" placeholder="Digite el team">
+            <input type="submit" value="Guardar">
+        </form>
+    </fieldset>
+    <fieldset>
+        <form id="jornada">
+            <h2>Jornada</h2>
+            <input type="radio" id="manana"name="jornada" value="manana">Mañana</input>
+            <input type="radio" id="tarde" name="jornada" value="tarde">Tarde</input>
+        </form> 
+            <form id="selectionRol"">
+                <h2>Rol usuario</h2>
+                <input type="radio" id="Camper"name="user" value="camper">Camper</input>
+                <input type="radio" id="Trainer" name="user" value="trainer">Trainer</input>
+            <br><br>
+            </form>  
+                 
+            <form id="myFormularioPersonas">
+            <select name="sede"></select>
+            <select name="team"></select><br>
+            <input type="text" name="nombre" placeholder="Ingrese el nombre "><br>
+            <input type="tel" name="telefono" placeholder="Ingrese el telefono"><br>
+            <input type="text" name="email" placeholder="ingrese Email">
+            <input type="submit" value="Guardar">
+            </form>
+    </fieldset>
+
+</body>
+</html>
