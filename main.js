@@ -25,8 +25,8 @@ let listaSedes = ()=>{
 }
 team.addEventListener("submit",(e)=>{
     e.preventDefault();
-    let info=Object.fromEntries(new FormData(e.target))
-    teamgroup[`${info.teamg}`];
+    let data=Object.fromEntries(new FormData(e.target))
+    teamgroup[`${data.teamg}`];
     console.log(teamgroup);
     listTeams();
     team.reset();
