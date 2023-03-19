@@ -1,60 +1,66 @@
-let myFormularioCampus = document.querySelector("#myFormularioCampus");
-let myFormularioPersonas = document.querySelector("#myFormularioPersonas");
-let team= document.querySelector("#team")
-let jornada= document.querySelector("#jornada")
-let selectionRol= document.querySelector("#selectionRol")
-let campus = {};
-let teamgroup={};
+const campus= document.getElementById('myFormularioCampus');
+let myFormularioCampers=document.querySelector('#myFormularioCamp')
+let tecnologia=document.querySelector('#tecnologia');
 
-myFormularioCampus.addEventListener("submit", (e)=>{
+var camp=[{
+    nomsede:'nombreSede',
+    direc: 'direccion',
+    cel: 'telefono',
+}];
+let data={};
+let tec={};
+
+campus.addEventListener('submit',(e)=>{
+
     e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.target))
-    campus[`${data.nombreSede}`] = {Camper: [], Trainers: [], team: []};
+    console.log(campus);
+   /*  let nomsede= document.getElementsByName('nombreSede');
+    let direc= document.getElementsByName('direccion');
+    let cel= document.getElementsByName('telefono'); */
+    let data= Object.fromEntries(new FormData(e.target.nomsede,e.target.direc,e.target.cel))
+
+    camp[`${data.nombreSede}`,`${data.direccion}`,`${data.telefono}`]=[];
+    console.log(camp);
     listaSedes();
-    myFormularioCampus.reset();
+    campus.reset();
 });
 
-let listaSedes = ()=>{
+let listaSedes=()=>{
     let opciones = document.querySelector("[name='sede']");
-    opciones.innerHTML = null;
-    for (let [val, id] of Object.entries(campus)) {
-        opciones.insertAdjacentHTML("beforeend", `
-            <option value="${val}">${val}</option>
-        `);
-    }
-}
-team.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    let data=Object.fromEntries(new FormData(e.target))
-    teamgroup[`${data.teamg}`];
-    console.log(teamgroup);
-    listTeams();
-    team.reset();
-});
-let listTeams =()=>{
-    let opciones = document.querySelector("[name='teamg']");
-    opciones.innerHTML = null;
-    for (let [val, id] of Object.entries(teamgroup)) {
-        opciones.insertAdjacentHTML("beforeend", `
-            <option value="${val}">${val}</option>
-        `);
-    }
-}
+        opciones.innerHTML = null;
+        for (let [val, id] of Object.entries(camp)) {
+            opciones.insertAdjacentHTML("beforeend", `
+                <option value="${val}">${val}</option>
+            `);
+        }
 
-myFormularioPersonas.addEventListener("submit", (e)=>{
+};
+/* 
+myFormularioCampers.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     console.log(data);
     let sede = data.sede;
     delete data.sede;
-    campus[`${sede}`]["Camper"].unshift(data);
-    console.log(campus);
+    camp[`${sede}`]["Camper"].unshift(data);
+    console.log(camp);
     myFormularioPersonas.reset();
-})
+}); */
 
-selectionRol.addEventListener("click",(e)=>{
+tecnologia.addEventListener("submit", (e)=>{
     e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target))
+    tec[`${data.tecnologia}`] = {};
+    tecnologiaa();
+    myFormularioCampus.reset();
+});
 
-
-    selectionRol.reset();
-})
+let tecnologiaa = ()=>{
+    let opciones = document.querySelector("[name='tecnscroll']");
+    opciones.innerHTML = null;
+    for (let [val, id] of Object.entries(tec)) {
+        opciones.insertAdjacentHTML("beforeend", `
+            <option value="${val}">${val}</option>
+        `);
+    }
+}

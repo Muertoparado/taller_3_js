@@ -21,7 +21,7 @@
 
     <fieldset>
         <legend>Tecnologia</legend>
-        <form action="">
+        <form id="tecnologia">
             <input type="text" name="tecnologia" placeholder="Tecnologia">
             <input type="submit" value="Guardar">
         </form>
@@ -30,8 +30,9 @@
     <fieldset>
         <legend>Temario</legend>
         <form action="">
+            <select name="tecscroll" ></select>
             <input type="text" name="temario" placeholder="Nombre Temario"><br><br>
-
+            
             <select id="obligatoria">
                 <option value="obligatoria">obligatoria</option>
                 <option value="nobligatoria">electiva</option>
@@ -73,49 +74,54 @@
     </fieldset>
 
     <fieldset>
-        <legend>Datos usuarios CAMPUS:</legend>
+        <legend>Team </legend>
         <form id="team">
             <h2>Team</h2>
             <input type="text" name="teamg" placeholder="Digite el team">
             <input type="submit" value="Guardar">
         </form>
     </fieldset>
+
     <fieldset>
         <legend>Datos Camper</legend>
         <br>
-        <form id="jornada">
+        <form id="myFormularioCampers">
+       
             <input type="radio" id="manana"name="jornada" value="manana">Mañana</input>
             <input type="radio" id="tarde" name="jornada" value="tarde">Tarde</input>
             <br><br>
-        </form> 
-                 
-        <form id="myFormularioPersonas">
             <select name="sede"></select>
             <select name="team"></select>
             <select name="ntemario"></select>
             <br><br>
-            <input type="text" name="nombre" placeholder="Ingrese el nombre "><br><br>
-            <input type="tel" name="telefono" placeholder="Ingrese el telefono"><br><br>
-            <input type="text" name="email" placeholder="ingrese Email"><br><br>
-            <input type="text" name="transporte" placeholder="Medio de transporte"><br><br>
-            <input type="number" name="nivel" placeholder="Nivel camper"><br><br>
-            <input type="text" name="barrio" placeholder=Barrio><br><br>
+            <input type="text" name="nombreCamp" placeholder="Ingrese el nombre "><br><br>
+            <input type="tel" name="telefonoCamp" placeholder="Ingrese el telefono"><br><br>
+            <input type="text" name="emailCamp" placeholder="ingrese Email"><br><br>
+            <input type="text" name="transporteCamp" placeholder="Medio de transporte"><br><br>
+            <p>Nivel Camper
+            <select name="nivelcamp" id="nivelCamp">
+                <option value="basico">Basico</option>
+                <option value="intermedio">Intermedio</option>
+               <option value="avanzado">Avanzado</option>
+            </select></p>
+            
+            <input type="text" name="barrioCamp" placeholder=Barrio><br><br>
             <input type="submit" value="Guardar">
         </form>
     </fieldset>
 
     <fieldset>
         <legend>Datos Trainer</legend>
-        <form action="">
+        <form id="myFormularioTrainers">
             <select name="" id="">Team</select>
-            <form id="jornada">
+            
                 <input type="radio" id="manana"name="jornada" value="manana">Mañana</input>
                 <input type="radio" id="tarde" name="jornada" value="tarde">Tarde</input>
                 <br><br>
-            </form> 
-            <input type="text" name="nombre" placeholder="Ingrese el nombre "><br><br>
-            <input type="tel" name="telefono" placeholder="Ingrese el telefono"><br><br>
-            <input type="text" name="email" placeholder="ingrese Email"><br><br>
+         
+            <input type="text" name="nombreTra" placeholder="Ingrese el nombre "><br><br>
+            <input type="tel" name="telefonoTra" placeholder="Ingrese el telefono"><br><br>
+            <input type="text" name="emailTra" placeholder="ingrese Email"><br><br>
             <input type="submit" value="Guardar">
 
         </form>
