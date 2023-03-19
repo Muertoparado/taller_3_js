@@ -1,6 +1,7 @@
 const campus= document.getElementById('myFormularioCampus');
-let myFormularioCampers=document.querySelector('#myFormularioCamp')
-let tecnologia=document.querySelector('#tecnologia');
+let myFormularioCampers=document.getElementById('#myFormularioCampers')
+
+const tecnologia=document.querySelector('#tecnologia');
 
 var camp=[{
     nomsede:'nombreSede',
@@ -9,18 +10,17 @@ var camp=[{
 }];
 let data={};
 let tec={};
-
-campus.addEventListener('submit',(e)=>{
+/* campus.addEventListener('submit',(e)=>{
 
     e.preventDefault();
     console.log(campus);
    /*  let nomsede= document.getElementsByName('nombreSede');
     let direc= document.getElementsByName('direccion');
-    let cel= document.getElementsByName('telefono'); */
+    let cel= document.getElementsByName('telefono'); 
     let data= Object.fromEntries(new FormData(e.target.nomsede,e.target.direc,e.target.cel))
 
     camp[`${data.nombreSede}`,`${data.direccion}`,`${data.telefono}`]=[];
-    console.log(camp);
+    console.log(data);
     listaSedes();
     campus.reset();
 });
@@ -35,6 +35,10 @@ let listaSedes=()=>{
         }
 
 };
+ */
+
+
+
 /* 
 myFormularioCampers.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -45,18 +49,19 @@ myFormularioCampers.addEventListener("submit", (e)=>{
     camp[`${sede}`]["Camper"].unshift(data);
     console.log(camp);
     myFormularioPersonas.reset();
-}); */
+});
+*/
 
-tecnologia.addEventListener("submit", (e)=>{
+tecnologia.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target))
     tec[`${data.tecnologia}`] = {};
     tecnologiaa();
-    myFormularioCampus.reset();
+    tecnologia.reset();
 });
 
 let tecnologiaa = ()=>{
-    let opciones = document.querySelector("[name='tecnscroll']");
+    let opciones = document.querySelector("[name='tecscroll']");
     opciones.innerHTML = null;
     for (let [val, id] of Object.entries(tec)) {
         opciones.insertAdjacentHTML("beforeend", `
@@ -64,3 +69,4 @@ let tecnologiaa = ()=>{
         `);
     }
 }
+ 
