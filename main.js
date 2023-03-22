@@ -2,6 +2,7 @@ const campus= document.getElementById('myFormularioCampus');
 let myFormularioCampers=document.getElementById('#myFormularioCampers')
 
 const tecnologia=document.querySelector('#tecnologia');
+const team=document.querySelector('#team');
 
 var camp=[{
     nomsede:'nombreSede',
@@ -10,17 +11,19 @@ var camp=[{
 }];
 let data={};
 let tec={};
-/* campus.addEventListener('submit',(e)=>{
+let tem={};
+
+campus.addEventListener('submit',(e)=>{
 
     e.preventDefault();
     console.log(campus);
-   /*  let nomsede= document.getElementsByName('nombreSede');
+    let nomsede= document.getElementsByName('nombreSede');
     let direc= document.getElementsByName('direccion');
     let cel= document.getElementsByName('telefono'); 
     let data= Object.fromEntries(new FormData(e.target.nomsede,e.target.direc,e.target.cel))
 
     camp[`${data.nombreSede}`,`${data.direccion}`,`${data.telefono}`]=[];
-    console.log(data);
+    console.log(camp);
     listaSedes();
     campus.reset();
 });
@@ -35,7 +38,7 @@ let listaSedes=()=>{
         }
 
 };
- */
+
 
 
 
@@ -68,5 +71,22 @@ let tecnologiaa = ()=>{
             <option value="${val}">${val}</option>
         `);
     }
-}
+};
  
+team.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target))
+    tem[`${data.team}`] = {};
+    rTeam();
+    team.reset();
+});
+
+let rTeam = ()=>{
+    let opciones = document.querySelector("[name='teamcamper']");
+    opciones.innerHTML = null;
+    for (let [val, id] of Object.entries(tem)) {
+        opciones.insertAdjacentHTML("beforeend", `
+            <option value="${val}">${val}</option>
+        `);
+    }
+};
